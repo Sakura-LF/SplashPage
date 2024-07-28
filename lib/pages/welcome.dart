@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:splashpage/common/assets.dart';
+import 'package:splashpage/common/stylebutton.dart';
+import 'package:splashpage/pages/login.dart';
 
 
 class WelcomePage extends StatelessWidget {
@@ -48,25 +50,22 @@ class WelcomePage extends StatelessWidget {
           // Login
           // 登录按钮
           // 登录按钮
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              minimumSize: const Size(50, 200),
-              backgroundColor: const Color(0xffFF7F00),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18),
-              ),
-            ),
-            child: const Text(
-              "Sign in",
-              style: TextStyle(
-                fontWeight: FontWeight.w300,
-                fontSize: 17,
-                color: Colors.white,
-                height: 26 / 17,
-              ),
-            ),
-          ),
+          // Get Started
+          StyleButton(
+            text: "Get Started",
+            width: 139,
+            height: 42,
+            radius: 32,
+            onPressed: () {
+              // 跳转
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LoginPage(),
+                ),
+              );
+            },
+          )
         ],
       ),
     );
